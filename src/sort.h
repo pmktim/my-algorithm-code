@@ -1,8 +1,19 @@
-/* 버블 정렬 — 이 저장소가 도는지 확인하는 예제이자, 새 프로젝트의 출발점. */
 #ifndef SORT_H
 #define SORT_H
 
-/* a[0..n-1]을 제자리에서 오름차순으로 정렬한다. */
-void bubbleSort(int a[], int n);
+/* 정렬 과정에서 측정할 통계 */
+typedef struct {
+    long long comparisons;
+    long long moves;
+} SortStats;
+
+/* 삽입 정렬 */
+SortStats insertionSort(int a[], int n);
+
+/* 병합 정렬 */
+SortStats mergeSort(int a[], int n);
+
+/* 힙 정렬 */
+SortStats heapSort(int a[], int n);
 
 #endif /* SORT_H */
